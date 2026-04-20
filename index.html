@@ -1,0 +1,2200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartStorageBox  -  Turn Every Clean Home Into Recurring Revenue</title>
+    <meta name="description" content="The AI inventory platform cleaning and organization companies use to deliver premium services, retain clients, and grow revenue.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --blue-50: #EFF6FF;
+            --blue-100: #DBEAFE;
+            --blue-200: #BFDBFE;
+            --blue-400: #60A5FA;
+            --blue-500: #3B82F6;
+            --blue-600: #2563EB;
+            --blue-700: #1D4ED8;
+            --blue-logo: #84B0DD;
+            --ink-900: #0A0E1A;
+            --ink-800: #111827;
+            --ink-700: #1F2937;
+            --ink-600: #374151;
+            --ink-500: #6B7280;
+            --ink-400: #9CA3AF;
+            --ink-300: #D1D5DB;
+            --ink-200: #E5E7EB;
+            --ink-100: #F3F4F6;
+            --ink-50: #F9FAFB;
+            --white: #FFFFFF;
+            --green-500: #10B981;
+            --green-100: #D1FAE5;
+            --orange-500: #F59E0B;
+            --purple-500: #8B5CF6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--ink-900);
+            background: var(--white);
+            font-size: 16px;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* ============ NAV ============ */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s ease;
+        }
+
+        nav.scrolled {
+            border-bottom-color: var(--ink-200);
+        }
+
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.875rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            height: 28px;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-logo svg {
+            height: 100%;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: var(--ink-700);
+            font-size: 0.875rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.15s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--ink-900);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.375rem;
+            font-family: inherit;
+            font-weight: 500;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.15s ease;
+            white-space: nowrap;
+        }
+
+        .btn-primary {
+            background: var(--ink-900);
+            color: var(--white);
+            padding: 0.625rem 1.125rem;
+            font-size: 0.875rem;
+            border: 1px solid var(--ink-900);
+        }
+
+        .btn-primary:hover {
+            background: var(--ink-800);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--ink-700);
+            padding: 0.625rem 1rem;
+            font-size: 0.875rem;
+            border: 1px solid transparent;
+        }
+
+        .btn-ghost:hover {
+            background: var(--ink-100);
+        }
+
+        .btn-lg {
+            padding: 0.875rem 1.5rem;
+            font-size: 0.9375rem;
+            border-radius: 10px;
+        }
+
+        .btn-outline {
+            background: var(--white);
+            color: var(--ink-900);
+            border: 1px solid var(--ink-200);
+            padding: 0.625rem 1.125rem;
+            font-size: 0.875rem;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--ink-400);
+        }
+
+        /* ============ HERO ============ */
+        .hero {
+            position: relative;
+            padding: 5rem 0 4rem;
+            overflow: hidden;
+            background: var(--white);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120%;
+            height: 600px;
+            background: radial-gradient(ellipse at center, rgba(132, 176, 221, 0.15) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .hero-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background-image:
+                linear-gradient(to right, rgba(0,0,0,0.02) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0,0,0,0.02) 1px, transparent 1px);
+            background-size: 50px 50px;
+            mask-image: radial-gradient(ellipse at center top, rgba(0,0,0,0.4) 0%, transparent 70%);
+            -webkit-mask-image: radial-gradient(ellipse at center top, rgba(0,0,0,0.4) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-inner {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 820px;
+            margin: 0 auto;
+        }
+
+        .hero-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--white);
+            border: 1px solid var(--ink-200);
+            border-radius: 100px;
+            padding: 0.375rem 0.5rem 0.375rem 0.875rem;
+            font-size: 0.8125rem;
+            font-weight: 500;
+            color: var(--ink-700);
+            margin-bottom: 1.75rem;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+            animation: fadeUp 0.8s ease-out;
+        }
+
+        .hero-pill-tag {
+            background: var(--blue-50);
+            color: var(--blue-700);
+            border-radius: 100px;
+            padding: 0.125rem 0.5rem;
+            font-size: 0.6875rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5.5vw, 4.25rem);
+            font-weight: 700;
+            letter-spacing: -0.035em;
+            line-height: 1.02;
+            color: var(--ink-900);
+            margin-bottom: 1.25rem;
+            animation: fadeUp 0.8s 0.1s ease-out backwards;
+        }
+
+        .hero h1 em {
+            font-family: 'Instrument Serif', serif;
+            font-style: italic;
+            font-weight: 400;
+            color: var(--blue-600);
+            letter-spacing: -0.02em;
+        }
+
+        .hero-sub {
+            font-size: 1.125rem;
+            color: var(--ink-500);
+            line-height: 1.55;
+            max-width: 620px;
+            margin: 0 auto 2rem;
+            animation: fadeUp 0.8s 0.2s ease-out backwards;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            gap: 0.625rem;
+            margin-bottom: 3rem;
+            animation: fadeUp 0.8s 0.3s ease-out backwards;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        /* Hero product mockup */
+        .hero-visual {
+            position: relative;
+            margin-top: 1rem;
+            animation: fadeUp 1s 0.4s ease-out backwards;
+        }
+
+        .hero-visual-wrap {
+            position: relative;
+            max-width: 1080px;
+            margin: 0 auto;
+        }
+
+        .app-window {
+            background: var(--white);
+            border: 1px solid var(--ink-200);
+            border-radius: 16px;
+            box-shadow:
+                0 1px 0 rgba(0,0,0,0.03),
+                0 24px 60px -12px rgba(17, 24, 39, 0.12),
+                0 8px 24px -8px rgba(17, 24, 39, 0.08);
+            overflow: hidden;
+        }
+
+        .app-titlebar {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid var(--ink-100);
+            background: var(--ink-50);
+        }
+
+        .app-dots {
+            display: flex;
+            gap: 0.375rem;
+        }
+
+        .app-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--ink-200);
+        }
+
+        .app-url {
+            flex: 1;
+            background: var(--white);
+            border-radius: 6px;
+            padding: 0.25rem 0.75rem;
+            font-size: 0.75rem;
+            color: var(--ink-500);
+            text-align: center;
+            max-width: 300px;
+            margin: 0 auto;
+            border: 1px solid var(--ink-200);
+        }
+
+        .app-url svg {
+            width: 10px;
+            height: 10px;
+            margin-right: 0.375rem;
+            vertical-align: -1px;
+        }
+
+        .app-body {
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            min-height: 480px;
+        }
+
+        .app-sidebar {
+            background: var(--ink-50);
+            border-right: 1px solid var(--ink-100);
+            padding: 1rem 0.75rem;
+        }
+
+        .app-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 0.625rem;
+            margin-bottom: 1rem;
+        }
+
+        .app-brand-icon {
+            width: 24px;
+            height: 24px;
+            background: linear-gradient(135deg, var(--blue-600), var(--blue-700));
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 0.75rem;
+        }
+
+        .app-brand-name {
+            font-size: 0.8125rem;
+            font-weight: 600;
+            color: var(--ink-900);
+        }
+
+        .app-nav-label {
+            font-size: 0.6875rem;
+            font-weight: 600;
+            color: var(--ink-400);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 0 0.625rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .app-nav-item {
+            display: flex;
+            align-items: center;
+            gap: 0.625rem;
+            padding: 0.5rem 0.625rem;
+            border-radius: 6px;
+            font-size: 0.8125rem;
+            color: var(--ink-600);
+            margin-bottom: 0.125rem;
+            cursor: pointer;
+        }
+
+        .app-nav-item.active {
+            background: var(--white);
+            color: var(--ink-900);
+            font-weight: 500;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+        }
+
+        .app-nav-item svg {
+            width: 14px;
+            height: 14px;
+            color: var(--ink-500);
+            flex-shrink: 0;
+        }
+
+        .app-nav-item.active svg {
+            color: var(--blue-600);
+        }
+
+        .app-main {
+            padding: 1.5rem 1.75rem;
+            overflow: hidden;
+        }
+
+        .app-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.25rem;
+        }
+
+        .app-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--ink-900);
+        }
+
+        .app-title-sub {
+            font-size: 0.75rem;
+            color: var(--ink-500);
+            margin-top: 0.125rem;
+        }
+
+        .app-search {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--ink-50);
+            border: 1px solid var(--ink-200);
+            border-radius: 8px;
+            padding: 0.5rem 0.75rem;
+            margin-bottom: 1rem;
+            font-size: 0.8125rem;
+        }
+
+        .app-search svg {
+            width: 14px;
+            height: 14px;
+            color: var(--ink-400);
+        }
+
+        .app-search-query {
+            color: var(--ink-900);
+            font-weight: 500;
+        }
+
+        .app-search-query::after {
+            content: '';
+            display: inline-block;
+            width: 2px;
+            height: 14px;
+            background: var(--blue-600);
+            vertical-align: -2px;
+            margin-left: 2px;
+            animation: blink 1s ease infinite;
+        }
+
+        .app-results {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .app-result {
+            display: grid;
+            grid-template-columns: 36px 1fr auto auto;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem;
+            background: var(--white);
+            border: 1px solid var(--ink-200);
+            border-radius: 8px;
+            transition: border-color 0.2s ease;
+        }
+
+        .app-result:hover {
+            border-color: var(--blue-200);
+        }
+
+        .app-result-thumb {
+            width: 36px;
+            height: 36px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .app-result-thumb.orange { background: #FEF3C7; color: #D97706; }
+        .app-result-thumb.green { background: #D1FAE5; color: #059669; }
+        .app-result-thumb.blue { background: #DBEAFE; color: #2563EB; }
+        .app-result-thumb.purple { background: #EDE9FE; color: #7C3AED; }
+
+        .app-result-thumb svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .app-result-name {
+            font-size: 0.8125rem;
+            font-weight: 500;
+            color: var(--ink-900);
+        }
+
+        .app-result-meta {
+            font-size: 0.6875rem;
+            color: var(--ink-500);
+            margin-top: 0.125rem;
+        }
+
+        .app-result-loc {
+            font-size: 0.6875rem;
+            color: var(--ink-700);
+            background: var(--ink-100);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .app-result-status {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--green-500);
+        }
+
+        /* Floating badge over hero visual */
+        .hero-float {
+            position: absolute;
+            background: var(--white);
+            border: 1px solid var(--ink-200);
+            border-radius: 12px;
+            padding: 0.75rem 1rem;
+            box-shadow: 0 10px 30px -8px rgba(17, 24, 39, 0.15);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            z-index: 3;
+        }
+
+        .hero-float.top {
+            top: 60px;
+            right: -10px;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .hero-float.bottom {
+            bottom: 40px;
+            left: -20px;
+            animation: float 6s 2s ease-in-out infinite;
+        }
+
+        .hero-float-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-float-icon.green { background: var(--green-100); color: var(--green-500); }
+        .hero-float-icon.blue { background: var(--blue-100); color: var(--blue-600); }
+
+        .hero-float-icon svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .hero-float-label {
+            font-size: 0.6875rem;
+            color: var(--ink-500);
+            margin-bottom: 0.125rem;
+        }
+
+        .hero-float-value {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--ink-900);
+        }
+
+        /* ============ LOGO CLOUD ============ */
+        .logo-cloud {
+            padding: 3rem 0 2rem;
+            border-bottom: 1px solid var(--ink-100);
+        }
+
+        .logo-cloud-title {
+            text-align: center;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--ink-400);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+
+        .logo-cloud-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .logo-cloud-item {
+            color: var(--ink-400);
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: -0.01em;
+            opacity: 0.7;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* ============ SECTIONS ============ */
+        section {
+            padding: 6rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-tag {
+            display: inline-block;
+            background: var(--blue-50);
+            color: var(--blue-700);
+            padding: 0.375rem 0.875rem;
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 2.75rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            color: var(--ink-900);
+            margin-bottom: 1rem;
+        }
+
+        .section-title em {
+            font-family: 'Instrument Serif', serif;
+            font-style: italic;
+            font-weight: 400;
+            color: var(--blue-600);
+        }
+
+        .section-desc {
+            font-size: 1.0625rem;
+            color: var(--ink-500);
+            line-height: 1.55;
+        }
+
+        /* ============ VALUE PROPS ============ */
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .value-card {
+            background: var(--white);
+            border: 1px solid var(--ink-200);
+            border-radius: 16px;
+            padding: 1.75rem;
+            transition: all 0.2s ease;
+        }
+
+        .value-card:hover {
+            border-color: var(--ink-300);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px -8px rgba(17, 24, 39, 0.08);
+        }
+
+        .value-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: var(--blue-50);
+            color: var(--blue-600);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.25rem;
+        }
+
+        .value-icon svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .value-card h3 {
+            font-size: 1.0625rem;
+            font-weight: 600;
+            color: var(--ink-900);
+            letter-spacing: -0.01em;
+            margin-bottom: 0.5rem;
+        }
+
+        .value-card p {
+            font-size: 0.9375rem;
+            color: var(--ink-500);
+            line-height: 1.55;
+        }
+
+        /* ============ HOW IT WORKS ============ */
+        .how-section {
+            background: var(--ink-50);
+            position: relative;
+        }
+
+        .how-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            counter-reset: step;
+        }
+
+        .how-step {
+            position: relative;
+        }
+
+        .how-step-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            background: var(--white);
+            border: 1px solid var(--ink-200);
+            border-radius: 8px;
+            font-size: 0.8125rem;
+            font-weight: 600;
+            color: var(--ink-600);
+            margin-bottom: 1rem;
+        }
+
+        .how-step-visual {
+            aspect-ratio: 16/10;
+            background: var(--white);
+            border: 1px solid var(--ink-200);
+            border-radius: 12px;
+            margin-bottom: 1.25rem;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Step 1 Visual - Camera/Photo */
+        .step-visual-1 {
+            background: linear-gradient(135deg, #F9FAFB, #F3F4F6);
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 6px;
+            padding: 14px;
+        }
+
+        .step-photo {
+            aspect-ratio: 1;
+            background: var(--white);
+            border-radius: 6px;
+            border: 1px solid var(--ink-200);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--ink-400);
+        }
+
+        .step-photo svg { width: 16px; height: 16px; }
+        .step-photo.active {
+            background: var(--blue-50);
+            border-color: var(--blue-200);
+            color: var(--blue-600);
+        }
+
+        /* Step 2 Visual - AI Processing */
+        .step-visual-2 {
+            background: linear-gradient(135deg, #EFF6FF, #DBEAFE);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            padding: 14px;
+            justify-content: center;
+        }
+
+        .step-ai-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--white);
+            border-radius: 6px;
+            padding: 6px 8px;
+            font-size: 0.6875rem;
+            color: var(--ink-700);
+        }
+
+        .step-ai-tag {
+            font-size: 0.6rem;
+            font-weight: 600;
+            color: var(--blue-700);
+            background: var(--blue-50);
+            padding: 1px 6px;
+            border-radius: 4px;
+        }
+
+        /* Step 3 Visual - Revenue */
+        .step-visual-3 {
+            background: linear-gradient(135deg, #ECFDF5, #D1FAE5);
+            padding: 16px;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: stretch;
+            display: flex;
+        }
+
+        .step-revenue-label {
+            font-size: 0.6875rem;
+            color: var(--ink-500);
+            font-weight: 500;
+        }
+
+        .step-revenue-amount {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--ink-900);
+            letter-spacing: -0.02em;
+        }
+
+        .step-revenue-amount small {
+            font-size: 0.75rem;
+            color: var(--ink-500);
+            font-weight: 500;
+            margin-left: 0.25rem;
+        }
+
+        .step-bar {
+            height: 4px;
+            background: rgba(16, 185, 129, 0.2);
+            border-radius: 2px;
+            overflow: hidden;
+            margin-top: 0.5rem;
+        }
+
+        .step-bar-fill {
+            height: 100%;
+            background: var(--green-500);
+            border-radius: 2px;
+        }
+
+        .how-step h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--ink-900);
+            letter-spacing: -0.01em;
+            margin-bottom: 0.5rem;
+        }
+
+        .how-step p {
+            font-size: 0.9375rem;
+            color: var(--ink-500);
+            line-height: 1.55;
+        }
+
+        /* ============ FEATURE SPLIT ============ */
+        .feature-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+            margin-bottom: 6rem;
+        }
+
+        .feature-split:last-child { margin-bottom: 0; }
+
+        .feature-split.reverse .feature-split-content { order: 2; }
+
+        .feature-split-tag {
+            display: inline-block;
+            color: var(--blue-600);
+            font-size: 0.8125rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            margin-bottom: 1rem;
+        }
+
+        .feature-split h2 {
+            font-size: clamp(1.75rem, 3vw, 2.25rem);
+            font-weight: 700;
+            letter-spacing: -0.025em;
+            line-height: 1.15;
+            color: var(--ink-900);
+            margin-bottom: 1rem;
+        }
+
+        .feature-split p {
+            font-size: 1rem;
+            color: var(--ink-500);
+            line-height: 1.55;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.875rem;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            font-size: 0.9375rem;
+            color: var(--ink-700);
+            line-height: 1.5;
+        }
+
+        .feature-list-check {
+            flex-shrink: 0;
+            width: 20px;
+            height: 20px;
+            background: var(--green-100);
+            color: var(--green-500);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 1px;
+        }
+
+        .feature-list-check svg {
+            width: 12px;
+            height: 12px;
+            stroke-width: 3;
+        }
+
+        .feature-visual {
+            background: var(--ink-50);
+            border: 1px solid var(--ink-200);
+            border-radius: 16px;
+            padding: 1.75rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Feature 1 - Chat interface */
+        .chat-interface {
+            background: var(--white);
+            border: 1px solid var(--ink-200);
+            border-radius: 12px;
+            padding: 1rem;
+            box-shadow: 0 8px 24px -8px rgba(17, 24, 39, 0.08);
+        }
+
+        .chat-header {
+            display: flex;
+            align-items: center;
+            gap: 0.625rem;
+            padding-bottom: 0.875rem;
+            border-bottom: 1px solid var(--ink-100);
+            margin-bottom: 1rem;
+        }
+
+        .chat-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--blue-500), var(--blue-700));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .chat-info-name {
+            font-size: 0.8125rem;
+            font-weight: 600;
+            color: var(--ink-900);
+        }
+
+        .chat-info-status {
+            font-size: 0.6875rem;
+            color: var(--green-500);
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .chat-info-status::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--green-500);
+        }
+
+        .chat-messages {
+            display: flex;
+            flex-direction: column;
+            gap: 0.625rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .chat-msg {
+            max-width: 80%;
+            padding: 0.5rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.8125rem;
+            line-height: 1.4;
+        }
+
+        .chat-msg.user {
+            align-self: flex-end;
+            background: var(--ink-900);
+            color: var(--white);
+            border-bottom-right-radius: 4px;
+        }
+
+        .chat-msg.bot {
+            align-self: flex-start;
+            background: var(--ink-100);
+            color: var(--ink-900);
+            border-bottom-left-radius: 4px;
+        }
+
+        .chat-msg.bot strong {
+            font-weight: 600;
+            color: var(--blue-600);
+        }
+
+        .chat-input {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 0.75rem;
+            background: var(--ink-50);
+            border: 1px solid var(--ink-200);
+            border-radius: 100px;
+            font-size: 0.8125rem;
+            color: var(--ink-400);
+        }
+
+        .chat-input svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        /* Feature 2 - Revenue dashboard */
+        .revenue-dash {
+            background: var(--white);
+            border: 1px solid var(--ink-200);
+            border-radius: 12px;
+            padding: 1.25rem;
+            box-shadow: 0 8px 24px -8px rgba(17, 24, 39, 0.08);
+        }
+
+        .dash-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .dash-title {
+            font-size: 0.75rem;
+            color: var(--ink-500);
+            margin-bottom: 0.25rem;
+        }
+
+        .dash-metric {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--ink-900);
+            letter-spacing: -0.02em;
+        }
+
+        .dash-change {
+            font-size: 0.75rem;
+            color: var(--green-500);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            background: var(--green-100);
+            padding: 0.125rem 0.5rem;
+            border-radius: 100px;
+            margin-top: 0.25rem;
+        }
+
+        .dash-chart {
+            height: 80px;
+            display: flex;
+            align-items: flex-end;
+            gap: 4px;
+            margin: 1rem 0;
+        }
+
+        .dash-bar {
+            flex: 1;
+            background: linear-gradient(to top, var(--blue-200), var(--blue-500));
+            border-radius: 3px 3px 0 0;
+            animation: barGrow 1s ease-out backwards;
+        }
+
+        .dash-bar:nth-child(1) { height: 40%; animation-delay: 0.1s; }
+        .dash-bar:nth-child(2) { height: 55%; animation-delay: 0.2s; }
+        .dash-bar:nth-child(3) { height: 45%; animation-delay: 0.3s; }
+        .dash-bar:nth-child(4) { height: 70%; animation-delay: 0.4s; }
+        .dash-bar:nth-child(5) { height: 65%; animation-delay: 0.5s; }
+        .dash-bar:nth-child(6) { height: 85%; animation-delay: 0.6s; }
+        .dash-bar:nth-child(7) { height: 90%; animation-delay: 0.7s; background: linear-gradient(to top, var(--green-500), #6EE7B7); }
+
+        .dash-rows {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            padding-top: 0.75rem;
+            border-top: 1px solid var(--ink-100);
+        }
+
+        .dash-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.75rem;
+        }
+
+        .dash-row-label {
+            color: var(--ink-500);
+        }
+
+        .dash-row-val {
+            color: var(--ink-900);
+            font-weight: 600;
+        }
+
+        /* ============ STATS ============ */
+        .stats-section {
+            background: var(--ink-900);
+            color: var(--white);
+            padding: 5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stats-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background-image:
+                radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.1) 0%, transparent 40%);
+        }
+
+        .stats-inner {
+            position: relative;
+            z-index: 2;
+        }
+
+        .stats-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .stats-header h2 {
+            font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+            font-weight: 700;
+            letter-spacing: -0.025em;
+            line-height: 1.1;
+            margin-bottom: 0.75rem;
+        }
+
+        .stats-header p {
+            font-size: 1rem;
+            color: var(--ink-400);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .stat {
+            padding: 2rem 1.5rem;
+            text-align: center;
+            border-right: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .stat:last-child { border-right: none; }
+
+        .stat-num {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #FFFFFF, #93C5FD);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            font-size: 0.8125rem;
+            color: var(--ink-400);
+            line-height: 1.4;
+        }
+
+        /* ============ TESTIMONIAL ============ */
+        .testimonial-section {
+            background: var(--white);
+            padding: 6rem 0;
+        }
+
+        .testimonial-card {
+            max-width: 760px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .testimonial-stars {
+            display: inline-flex;
+            gap: 0.125rem;
+            margin-bottom: 1.5rem;
+            color: var(--orange-500);
+        }
+
+        .testimonial-stars svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .testimonial-quote {
+            font-family: 'Instrument Serif', serif;
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            line-height: 1.25;
+            letter-spacing: -0.015em;
+            color: var(--ink-900);
+            margin-bottom: 1.75rem;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+
+        .testimonial-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--blue-500), var(--blue-700));
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+
+        .testimonial-name {
+            font-size: 0.9375rem;
+            font-weight: 600;
+            color: var(--ink-900);
+        }
+
+        .testimonial-role {
+            font-size: 0.8125rem;
+            color: var(--ink-500);
+        }
+
+        /* ============ FAQ ============ */
+        .faq-section {
+            background: var(--ink-50);
+        }
+
+        .faq-grid {
+            max-width: 760px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .faq-item {
+            background: var(--white);
+            border: 1px solid var(--ink-200);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: border-color 0.2s ease;
+        }
+
+        .faq-item:hover { border-color: var(--ink-300); }
+
+        .faq-question {
+            padding: 1.125rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            gap: 1rem;
+        }
+
+        .faq-question h4 {
+            font-size: 0.9375rem;
+            font-weight: 600;
+            color: var(--ink-900);
+            letter-spacing: -0.005em;
+        }
+
+        .faq-icon {
+            width: 24px;
+            height: 24px;
+            background: var(--ink-100);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--ink-600);
+            transition: all 0.2s ease;
+            flex-shrink: 0;
+        }
+
+        .faq-icon svg {
+            width: 12px;
+            height: 12px;
+            transition: transform 0.2s ease;
+        }
+
+        .faq-item.active .faq-icon {
+            background: var(--blue-600);
+            color: var(--white);
+        }
+
+        .faq-item.active .faq-icon svg {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-answer p {
+            padding: 0 1.5rem 1.25rem;
+            font-size: 0.9375rem;
+            color: var(--ink-500);
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-answer { max-height: 400px; }
+
+        /* ============ CTA ============ */
+        .cta-section {
+            padding: 6rem 0;
+            text-align: center;
+            background: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-card {
+            background: var(--ink-900);
+            color: var(--white);
+            border-radius: 24px;
+            padding: 4rem 2rem;
+            max-width: 1040px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at center, rgba(59, 130, 246, 0.25) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .cta-card-inner {
+            position: relative;
+            z-index: 2;
+            max-width: 620px;
+            margin: 0 auto;
+        }
+
+        .cta-card h2 {
+            font-size: clamp(2rem, 4vw, 2.75rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+
+        .cta-card h2 em {
+            font-family: 'Instrument Serif', serif;
+            font-style: italic;
+            font-weight: 400;
+            color: #93C5FD;
+        }
+
+        .cta-card p {
+            font-size: 1.0625rem;
+            color: var(--ink-400);
+            margin-bottom: 2rem;
+            line-height: 1.55;
+        }
+
+        .btn-white {
+            background: var(--white);
+            color: var(--ink-900);
+            padding: 0.875rem 1.75rem;
+            font-size: 0.9375rem;
+            font-weight: 600;
+            border-radius: 10px;
+            border: 1px solid var(--white);
+        }
+
+        .btn-white:hover {
+            background: var(--ink-100);
+            transform: translateY(-1px);
+        }
+
+        /* ============ FOOTER ============ */
+        footer {
+            background: var(--white);
+            border-top: 1px solid var(--ink-200);
+            padding: 3rem 0 2rem;
+        }
+
+        .footer-inner {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand {
+            max-width: 320px;
+        }
+
+        .footer-logo {
+            height: 24px;
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo svg {
+            height: 100%;
+            width: auto;
+        }
+
+        .footer-tagline {
+            font-size: 0.875rem;
+            color: var(--ink-500);
+            line-height: 1.55;
+        }
+
+        .footer-col h5 {
+            font-size: 0.8125rem;
+            font-weight: 600;
+            color: var(--ink-900);
+            margin-bottom: 1rem;
+        }
+
+        .footer-col a {
+            display: block;
+            font-size: 0.875rem;
+            color: var(--ink-500);
+            text-decoration: none;
+            margin-bottom: 0.625rem;
+            transition: color 0.15s ease;
+        }
+
+        .footer-col a:hover { color: var(--ink-900); }
+
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid var(--ink-100);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8125rem;
+            color: var(--ink-500);
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        /* ============ ANIMATIONS ============ */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        @keyframes barGrow {
+            from { height: 0; }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ============ RESPONSIVE ============ */
+        @media (max-width: 900px) {
+            .value-grid, .how-grid { grid-template-columns: 1fr; }
+            .feature-split { grid-template-columns: 1fr; gap: 2.5rem; }
+            .feature-split.reverse .feature-split-content { order: 0; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
+            .stat:nth-child(3), .stat:nth-child(4) { border-bottom: none; }
+            .stat:nth-child(1), .stat:nth-child(3) { border-right: 1px solid rgba(255,255,255,0.08); }
+            .footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
+            .app-body { grid-template-columns: 1fr; }
+            .app-sidebar { display: none; }
+            .nav-links { gap: 0.75rem; }
+            .nav-link:not(.btn) { display: none; }
+            .hero-float { display: none; }
+        }
+
+        @media (max-width: 600px) {
+            section { padding: 4rem 0; }
+            .hero { padding: 3rem 0 2rem; }
+            .cta-card { padding: 3rem 1.5rem; }
+            .footer-inner { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; text-align: center; }
+            .hero-cta { flex-direction: column; width: 100%; }
+            .hero-cta .btn { width: 100%; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav id="nav">
+        <div class="nav-inner">
+            <a href="/" class="nav-logo">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1540.89 158.14"><defs><style>.cls-nav-1{fill:#2563EB;}.cls-nav-2{fill:#fff;}</style></defs><rect class="cls-nav-1" x="18.03" y="16.29" width="126.61" height="121.17"/><path class="cls-nav-1" d="M556.54,90.09c.89,7.56,8.77,12.51,18.93,12.51S592.68,97.71,592.68,91c0-6-4.39-9.27-15.43-11.75l-11.94-2.6C548.41,73,540.1,64.44,540.1,51c0-16.9,14.6-28.07,35-28.07,21.34,0,34.74,11,35.05,27.56h-18c-.63-7.75-7.43-12.45-17-12.45S559.4,42.59,559.4,49.39c0,5.65,4.45,8.82,15,11.24L585.5,63c18.35,3.93,26.35,11.81,26.35,25.78,0,17.78-14.41,29-37.14,29-22,0-36.08-10.48-36.65-27.69Z"/><path class="cls-nav-1" d="M645.51,32.43V48.12h12.57v14H645.51V94.66c0,5.21,2.54,7.69,8,7.69A30.14,30.14,0,0,0,658,102v13.65a42.19,42.19,0,0,1-8.83.77c-16,0-22.23-5.34-22.23-18.61V62.09h-9.58v-14H627V32.43Z"/><path class="cls-nav-1" d="M664.81,82.09c0-22,13.34-35.43,33.72-35.43S732.25,60,732.25,82.09c0,22.42-13.14,35.56-33.72,35.56S664.81,104.44,664.81,82.09Zm48.58.06c0-13.52-5.84-21.33-14.86-21.33s-14.92,7.81-14.92,21.33,5.78,21.34,14.92,21.34S713.39,95.81,713.39,82.15Z"/><path class="cls-nav-1" d="M741.77,48.12h17.91V60.37h.38c2.42-8.63,8.19-13.33,16.2-13.33a18.59,18.59,0,0,1,5.27.7V64.06A19,19,0,0,0,774.79,63c-9.14,0-14.47,5.58-14.47,15.17v38H741.77Z"/><path class="cls-nav-1" d="M784.89,96.63c0-12.38,9.53-19.56,26.48-20.57l17.15-1V70.53c0-6.35-4.45-10-11.43-10s-11.31,3.43-12.2,8.45H787.94c.7-13.21,11.94-22.29,30-22.29,17.47,0,28.83,9,28.83,22.73v46.8H828.83V105.78h-.38c-3.81,7.24-12.25,11.49-20.76,11.49C794.73,117.27,784.89,108.89,784.89,96.63Zm43.63-5.39v-5l-14.36.89c-6.92.51-10.85,3.62-10.85,8.45,0,5.08,4.19,8.25,10.47,8.25C821.85,103.87,828.52,98.6,828.52,91.24Z"/><path class="cls-nav-1" d="M858.3,121h18.16c1.46,4.7,6.79,7.94,13.84,7.94,9.59,0,14.93-5.34,14.93-13.21V103.81h-.39c-3.17,7.24-11.17,12.19-21,12.19-16.64,0-27.63-12.83-27.63-34.1C856.2,60.31,866.87,47,884.14,47c9.78,0,17.47,5.14,21,13h.32V48.12h18.29v67.12c0,16.26-13.59,26.61-34,26.61C871.89,141.85,859.76,133.15,858.3,121Zm47-39c0-12.26-5.91-20.13-15.18-20.13S875.19,69.64,875.19,82s5.71,19.68,14.92,19.68S905.29,94.35,905.29,82Z"/><path class="cls-nav-1" d="M997.94,95.36c-2,13.34-14.23,22.29-31.06,22.29-21,0-33.53-13.4-33.53-35.18s12.7-35.81,32.84-35.81c19.81,0,32.32,13.39,32.32,34.1v5.65H951.58v1.14c0,9.72,6.16,16.39,15.62,16.39,6.8,0,12-3.37,13.72-8.58ZM951.77,75h28.89c-.38-8.7-6-14.67-14.28-14.67S952.4,66.53,951.77,75Z"/><path d="M197.45,90.09c.89,7.56,8.76,12.51,18.92,12.51S233.58,97.71,233.58,91c0-6-4.38-9.27-15.43-11.75l-11.94-2.6C189.32,73,181,64.44,181,51,181,34.14,195.61,23,216.05,23c21.34,0,34.74,11,35.06,27.56h-18c-.64-7.75-7.43-12.45-17-12.45s-15.81,4.51-15.81,11.31c0,5.65,4.44,8.82,15,11.24L226.41,63c18.35,3.93,26.35,11.81,26.35,25.78,0,17.78-14.42,29-37.15,29-22,0-36.07-10.48-36.64-27.69Z"/><path d="M262.92,48.12h17.9V60.44h.39a20,20,0,0,1,19.43-13.59c9.84,0,16.7,5.08,19,14H320c3-8.58,11.17-14,21.14-14,13.34,0,22.29,9.14,22.29,22.86v46.48H344.9V74.34c0-7.87-3.94-12.19-11.11-12.19s-11.69,5.14-11.69,12.7v41.34H304.26V73.77c0-7.3-4.13-11.62-11-11.62-7,0-11.81,5.33-11.81,13v41.08H262.92Z"/><path d="M372.58,96.63c0-12.38,9.53-19.56,26.48-20.57l17.15-1V70.53c0-6.35-4.45-10-11.43-10s-11.31,3.43-12.2,8.45H375.63c.7-13.21,11.94-22.29,30-22.29,17.47,0,28.83,9,28.83,22.73v46.8h-17.9V105.78h-.39c-3.81,7.24-12.25,11.49-20.76,11.49C382.42,117.27,372.58,108.89,372.58,96.63Zm43.63-5.39v-5l-14.35.89c-6.93.51-10.86,3.62-10.86,8.45,0,5.08,4.19,8.25,10.48,8.25C409.54,103.87,416.21,98.6,416.21,91.24Z"/><path d="M446.37,48.12h17.91V60.37h.38C467.07,51.74,472.85,47,480.85,47a18.54,18.54,0,0,1,5.27.7V64.06A18.93,18.93,0,0,0,479.39,63c-9.14,0-14.48,5.58-14.48,15.17v38H446.37Z"/><path d="M517.17,32.43V48.12h12.58v14H517.17V94.66c0,5.21,2.54,7.69,8,7.69a29.94,29.94,0,0,0,4.51-.32v13.65a42.08,42.08,0,0,1-8.82.77c-16,0-22.23-5.34-22.23-18.61V62.09H489v-14h9.59V32.43Z"/><path d="M1009.62,116.19V24.56h39.88c17.21,0,28,8.82,28,22.86a20.2,20.2,0,0,1-17.21,19.87v.51c12.45,1,21.6,10,21.6,22.17,0,16.13-12.13,26.22-31.69,26.22Zm19.18-53.53h13.78c10.22,0,16.06-4.51,16.06-12.26,0-7.36-5.14-11.56-14.09-11.56H1028.8Zm16.51,39.24c11,0,17-4.7,17-13.46,0-8.57-6.16-13.14-17.47-13.14H1028.8v26.6Z"/><path d="M1088.74,82.09c0-22,13.34-35.43,33.72-35.43s33.72,13.33,33.72,35.43c0,22.42-13.14,35.56-33.72,35.56S1088.74,104.44,1088.74,82.09Zm48.58.06c0-13.52-5.84-21.33-14.86-21.33s-14.92,7.81-14.92,21.33,5.78,21.34,14.92,21.34S1137.32,95.81,1137.32,82.15Z"/><path d="M1191.74,92.57,1179,116.19h-19.49l21.34-33.91-21.21-34.16h20.89l12.25,23h.39l12.06-23h20.2l-21.28,33.65,21.09,34.42h-20.14l-13-23.62Z"/><path d="M1234.6,106.73A10.23,10.23,0,1,1,1244.82,117,10.13,10.13,0,0,1,1234.6,106.73Z"/><path d="M1310.68,73.45c-1.08-7.17-5.85-12.25-13.47-12.25-9.14,0-14.86,7.75-14.86,20.89,0,13.4,5.72,21,14.93,21,7.43,0,12.25-4.44,13.4-11.87H1328c-1,16.06-13,26.41-30.86,26.41-20.52,0-33.53-13.33-33.53-35.56,0-21.84,13-35.43,33.4-35.43,18.42,0,30.1,11.36,30.93,26.79Z"/><path d="M1334.42,82.09c0-22,13.34-35.43,33.72-35.43s33.72,13.33,33.72,35.43c0,22.42-13.14,35.56-33.72,35.56S1334.42,104.44,1334.42,82.09Zm48.58.06c0-13.52-5.84-21.33-14.86-21.33s-14.92,7.81-14.92,21.33,5.78,21.34,14.92,21.34S1383,95.81,1383,82.15Z"/><path d="M1411.39,48.12h17.9V60.44h.38a20,20,0,0,1,19.44-13.59c9.84,0,16.7,5.08,19,14h.39c3-8.58,11.17-14,21.14-14,13.34,0,22.29,9.14,22.29,22.86v46.48h-18.54V74.34c0-7.87-3.94-12.19-11.11-12.19s-11.69,5.14-11.69,12.7v41.34h-17.84V73.77c0-7.3-4.13-11.62-11-11.62-7,0-11.81,5.33-11.81,13v41.08h-18.54Z"/><polygon class="cls-nav-2" points="89.37 116.19 81.87 116.19 81.87 76.28 42.09 76.28 42.09 68.78 89.37 68.78 89.37 116.19"/><polygon class="cls-nav-2" points="104.98 116.19 97.48 116.19 97.48 60.67 42.09 60.67 42.09 53.17 104.98 53.17 104.98 116.19"/><polygon class="cls-nav-2" points="120.59 116.19 113.09 116.19 113.09 45.07 42.09 45.07 42.09 37.56 120.59 37.56 120.59 116.19"/></svg>
+            </a>
+            <div class="nav-links">
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#how" class="nav-link">How it works</a>
+                <a href="#faq" class="nav-link">FAQ</a>
+                <a href="#cta" class="btn btn-ghost nav-link">Sign in</a>
+                <a href="#cta" class="btn btn-primary">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-grid"></div>
+        <div class="container">
+            <div class="hero-inner">
+                <div class="hero-pill">
+                    <span class="hero-pill-tag">NEW</span>
+                    Now partnering with cleaning companies
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg>
+                </div>
+                <h1>Turn every clean home into <em>recurring revenue.</em></h1>
+                <p class="hero-sub">SmartStorageBox is the AI inventory platform cleaning and organization companies use to deliver premium services, retain clients longer, and grow revenue without adding staff.</p>
+                <div class="hero-cta">
+                    <a href="#cta" class="btn btn-primary btn-lg">
+                        Start free trial
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+                    </a>
+                    <a href="#how" class="btn btn-outline btn-lg">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+                        Watch demo
+                    </a>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="hero-visual-wrap">
+                        <div class="app-window">
+                            <div class="app-titlebar">
+                                <div class="app-dots">
+                                    <div class="app-dot"></div>
+                                    <div class="app-dot"></div>
+                                    <div class="app-dot"></div>
+                                </div>
+                                <div class="app-url">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+                                    app.smartstoragebox.com
+                                </div>
+                            </div>
+                            <div class="app-body">
+                                <aside class="app-sidebar">
+                                    <div class="app-brand">
+                                        <div class="app-brand-icon">S</div>
+                                        <div class="app-brand-name">SmartStorage</div>
+                                    </div>
+                                    <div class="app-nav-label">Workspace</div>
+                                    <div class="app-nav-item">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                                        Dashboard
+                                    </div>
+                                    <div class="app-nav-item active">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 7h-9m9 5h-9m9 5h-9M5 7h.01M5 12h.01M5 17h.01"/></svg>
+                                        Inventory
+                                    </div>
+                                    <div class="app-nav-item">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+                                        Clients
+                                    </div>
+                                    <div class="app-nav-item">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                                        Revenue
+                                    </div>
+                                    <div class="app-nav-item">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 008 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H2a2 2 0 010-4h.09A1.65 1.65 0 004.6 8a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V2a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H22a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+                                        Settings
+                                    </div>
+                                </aside>
+                                <main class="app-main">
+                                    <div class="app-header">
+                                        <div>
+                                            <div class="app-title">Johnson Residence</div>
+                                            <div class="app-title-sub">3,247 items catalogued across 8 rooms</div>
+                                        </div>
+                                    </div>
+                                    <div class="app-search">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                                        <span class="app-search-query">gardening shears</span>
+                                    </div>
+                                    <div class="app-results">
+                                        <div class="app-result">
+                                            <div class="app-result-thumb orange">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg>
+                                            </div>
+                                            <div>
+                                                <div class="app-result-name">Fiskars Pro Shears</div>
+                                                <div class="app-result-meta">Catalogued Mar 2, 2026</div>
+                                            </div>
+                                            <div class="app-result-loc">Garage · Box 14</div>
+                                            <div class="app-result-status"></div>
+                                        </div>
+                                        <div class="app-result">
+                                            <div class="app-result-thumb green">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                                            </div>
+                                            <div>
+                                                <div class="app-result-name">Pruning Shears Set</div>
+                                                <div class="app-result-meta">Catalogued Mar 2, 2026</div>
+                                            </div>
+                                            <div class="app-result-loc">Shed · Shelf 3</div>
+                                            <div class="app-result-status"></div>
+                                        </div>
+                                        <div class="app-result">
+                                            <div class="app-result-thumb blue">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+                                            </div>
+                                            <div>
+                                                <div class="app-result-name">Hedge Trimming Kit</div>
+                                                <div class="app-result-meta">Catalogued Feb 28, 2026</div>
+                                            </div>
+                                            <div class="app-result-loc">Basement · Box 7</div>
+                                            <div class="app-result-status"></div>
+                                        </div>
+                                    </div>
+                                </main>
+                            </div>
+                        </div>
+
+                        <div class="hero-float top">
+                            <div class="hero-float-icon green">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+                            </div>
+                            <div>
+                                <div class="hero-float-label">Revenue per visit</div>
+                                <div class="hero-float-value">+$150 average</div>
+                            </div>
+                        </div>
+
+                        <div class="hero-float bottom">
+                            <div class="hero-float-icon blue">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            </div>
+                            <div>
+                                <div class="hero-float-label">Client retention</div>
+                                <div class="hero-float-value">+40% year over year</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOGO CLOUD -->
+    <section class="logo-cloud">
+        <div class="container">
+            <p class="logo-cloud-title">Built for home service professionals</p>
+            <div class="logo-cloud-grid">
+                <div class="logo-cloud-item">Residential Cleaning</div>
+                <div class="logo-cloud-item">Home Organizers</div>
+                <div class="logo-cloud-item">Junk Removal</div>
+                <div class="logo-cloud-item">Moving Services</div>
+                <div class="logo-cloud-item">Declutter Pros</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VALUE PROPS -->
+    <section id="features">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Why partners choose us</span>
+                <h2 class="section-title">A premium service your clients <em>actually want.</em></h2>
+                <p class="section-desc">Your team already goes into homes every week. SmartStorageBox gives them a system to deliver lasting, high-margin organization alongside their regular work.</p>
+            </div>
+            <div class="value-grid">
+                <div class="value-card reveal">
+                    <div class="value-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+                    </div>
+                    <h3>Revenue that compounds</h3>
+                    <p>Upsell $50-$200 per visit. One cleaning company adds an average $3,000/month in recurring revenue from 20 clients.</p>
+                </div>
+                <div class="value-card reveal">
+                    <div class="value-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+                    </div>
+                    <h3>Clients that stay</h3>
+                    <p>When clients find everything they own through your service, they don't switch providers. Retention rates climb 40% year over year.</p>
+                </div>
+                <div class="value-card reveal">
+                    <div class="value-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                    </div>
+                    <h3>Zero tech overhead</h3>
+                    <p>Your crew already has phones. They snap photos, our AI does everything else. No training curve, no new software to learn.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="how-section" id="how">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">How it works</span>
+                <h2 class="section-title">Three steps. <em>That's it.</em></h2>
+                <p class="section-desc">No new processes. No extra staff. Your team adds one simple step to what they're already doing.</p>
+            </div>
+            <div class="how-grid">
+                <div class="how-step reveal">
+                    <div class="how-step-visual step-visual-1">
+                        <div class="step-photo">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                        </div>
+                        <div class="step-photo active">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                        </div>
+                        <div class="step-photo">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                        </div>
+                        <div class="step-photo">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                        </div>
+                        <div class="step-photo active">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                        </div>
+                        <div class="step-photo">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                        </div>
+                    </div>
+                    <div class="how-step-num">01</div>
+                    <h3>Snap photos during the visit</h3>
+                    <p>While your team cleans or organizes, they take quick photos of rooms, closets, and storage areas. Takes 5 extra minutes per visit.</p>
+                </div>
+                <div class="how-step reveal">
+                    <div class="how-step-visual step-visual-2">
+                        <div class="step-ai-row"><span class="step-ai-tag">AI</span>Identified: Fiskars garden shears</div>
+                        <div class="step-ai-row"><span class="step-ai-tag">AI</span>Tagged: Garage, Box 14</div>
+                        <div class="step-ai-row"><span class="step-ai-tag">AI</span>Catalogued: 247 items processed</div>
+                    </div>
+                    <div class="how-step-num">02</div>
+                    <h3>AI builds the database</h3>
+                    <p>Our AI identifies every item, tags its location, and creates a searchable inventory. No manual data entry. Nothing for your crew to learn.</p>
+                </div>
+                <div class="how-step reveal">
+                    <div class="how-step-visual step-visual-3">
+                        <div>
+                            <div class="step-revenue-label">This month</div>
+                            <div class="step-revenue-amount">$3,240<small>+28%</small></div>
+                        </div>
+                        <div>
+                            <div class="step-revenue-label" style="margin-bottom: 4px;">Client retention</div>
+                            <div class="step-bar"><div class="step-bar-fill" style="width: 92%;"></div></div>
+                        </div>
+                    </div>
+                    <div class="how-step-num">03</div>
+                    <h3>Earn premium rates</h3>
+                    <p>Charge per session, per room, or include it in your premium tier. Clients pay for peace of mind. You earn more per visit.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURE SPLITS -->
+    <section>
+        <div class="container">
+            <!-- Feature 1 -->
+            <div class="feature-split">
+                <div class="feature-split-content reveal">
+                    <span class="feature-split-tag">FOR YOUR CLIENTS</span>
+                    <h2>Clients never lose anything again.</h2>
+                    <p>After your visit, clients can ask a simple chatbot where anything is, any time. Instant answers. Their memory of your service lives on long after you've left.</p>
+                    <ul class="feature-list">
+                        <li>
+                            <div class="feature-list-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+                            <span>Natural chat interface. No apps to download.</span>
+                        </li>
+                        <li>
+                            <div class="feature-list-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+                            <span>Works on iMessage, WhatsApp, or SMS.</span>
+                        </li>
+                        <li>
+                            <div class="feature-list-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+                            <span>Branded as your service, not ours.</span>
+                        </li>
+                        <li>
+                            <div class="feature-list-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+                            <span>Triggers callbacks for more work.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="feature-visual reveal">
+                    <div class="chat-interface">
+                        <div class="chat-header">
+                            <div class="chat-avatar">SC</div>
+                            <div>
+                                <div class="chat-info-name">Sparkle Clean Co.</div>
+                                <div class="chat-info-status">Online</div>
+                            </div>
+                        </div>
+                        <div class="chat-messages">
+                            <div class="chat-msg user">Where did you put my winter coats?</div>
+                            <div class="chat-msg bot">Your winter coats are in <strong>Basement · Box 4</strong>, labeled "Seasonal Clothing". Organized during your Jan 12 visit.</div>
+                            <div class="chat-msg user">What about the Christmas lights?</div>
+                            <div class="chat-msg bot"><strong>Garage · Shelf 2</strong>, in the red bin. Want me to book a seasonal decor setup visit?</div>
+                        </div>
+                        <div class="chat-input">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+                            Ask anything...
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="feature-split reverse">
+                <div class="feature-split-content reveal">
+                    <span class="feature-split-tag">FOR YOUR BUSINESS</span>
+                    <h2>See every dollar this adds to your bottom line.</h2>
+                    <p>Real-time dashboards show how much revenue the inventory service is generating, which clients are engaging most, and where the upsell opportunities are.</p>
+                    <ul class="feature-list">
+                        <li>
+                            <div class="feature-list-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+                            <span>Track revenue, retention, and engagement.</span>
+                        </li>
+                        <li>
+                            <div class="feature-list-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+                            <span>Identify which clients are ready for upsells.</span>
+                        </li>
+                        <li>
+                            <div class="feature-list-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+                            <span>Export reports for team reviews.</span>
+                        </li>
+                        <li>
+                            <div class="feature-list-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+                            <span>Integrates with HubSpot, Jobber, Housecall Pro.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="feature-visual reveal">
+                    <div class="revenue-dash">
+                        <div class="dash-header">
+                            <div>
+                                <div class="dash-title">Monthly revenue</div>
+                                <div class="dash-metric">$12,847</div>
+                                <div class="dash-change">
+                                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                                    +32%
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dash-chart">
+                            <div class="dash-bar"></div>
+                            <div class="dash-bar"></div>
+                            <div class="dash-bar"></div>
+                            <div class="dash-bar"></div>
+                            <div class="dash-bar"></div>
+                            <div class="dash-bar"></div>
+                            <div class="dash-bar"></div>
+                        </div>
+                        <div class="dash-rows">
+                            <div class="dash-row">
+                                <span class="dash-row-label">Active clients</span>
+                                <span class="dash-row-val">47</span>
+                            </div>
+                            <div class="dash-row">
+                                <span class="dash-row-label">Avg revenue per client</span>
+                                <span class="dash-row-val">$273</span>
+                            </div>
+                            <div class="dash-row">
+                                <span class="dash-row-label">Retention rate</span>
+                                <span class="dash-row-val">94%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats-section">
+        <div class="container stats-inner">
+            <div class="stats-header">
+                <h2>The numbers our partners are seeing.</h2>
+                <p>Real results from cleaning and organization companies using SmartStorageBox.</p>
+            </div>
+            <div class="stats-grid">
+                <div class="stat">
+                    <div class="stat-num">+125%</div>
+                    <div class="stat-label">Revenue per client visit</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">40%</div>
+                    <div class="stat-label">Improvement in retention</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">$3K+</div>
+                    <div class="stat-label">Average monthly revenue added</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">5 min</div>
+                    <div class="stat-label">Extra time per cleaning visit</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIAL -->
+    <section class="testimonial-section">
+        <div class="container">
+            <div class="testimonial-card reveal">
+                <div class="testimonial-stars">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+                    <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+                    <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+                    <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+                    <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+                </div>
+                <blockquote class="testimonial-quote">"We stopped competing on price the day we added SmartStorageBox. Our clients now pay a premium for something none of our competitors offer."</blockquote>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">MB</div>
+                    <div style="text-align: left;">
+                        <div class="testimonial-name">Early access partner</div>
+                        <div class="testimonial-role">Residential cleaning, Toronto</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">FAQ</span>
+                <h2 class="section-title">Questions, answered.</h2>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item reveal">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h4>How long does setup take?</h4>
+                        <div class="faq-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>About 30 minutes. We configure your account, sync your client list, and your team can start catalogueing on their next visit. No infrastructure to install.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h4>Do my cleaners need training?</h4>
+                        <div class="faq-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>If they can take a photo with a smartphone, they can use SmartStorageBox. Our AI handles all the identification and cataloguing. We provide a short onboarding guide for your team, typically under 20 minutes.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h4>How much can I charge clients?</h4>
+                        <div class="faq-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Most partners charge between $50 and $200 per session depending on scope. Some bundle it into premium recurring packages. The pricing is entirely yours, and SmartStorageBox is your tool to deploy.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h4>Does this integrate with my existing tools?</h4>
+                        <div class="faq-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes. SmartStorageBox has native integrations with HubSpot, Jobber, and Housecall Pro. We also support webhooks and API access for custom integrations.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h4>Is client data secure?</h4>
+                        <div class="faq-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely. All data is encrypted in transit and at rest, stored on SOC 2 compliant infrastructure, and only accessible by the homeowner and authorized service providers. We never sell or share client data.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section" id="cta">
+        <div class="container">
+            <div class="cta-card reveal">
+                <div class="cta-card-inner">
+                    <h2>Ready to offer your clients <em>something nobody else can?</em></h2>
+                    <p>We'll send you a personalized 2-minute video showing exactly how SmartStorageBox works for your business. No commitment. No pressure.</p>
+                    <a href="mailto:hello@smartstoragebox.com" class="btn btn-white btn-lg">
+                        Request your custom demo
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1540.89 158.14"><defs><style>.cls-f-1{fill:#2563EB;}.cls-f-2{fill:#fff;}</style></defs><rect class="cls-f-1" x="18.03" y="16.29" width="126.61" height="121.17"/><path class="cls-f-1" d="M556.54,90.09c.89,7.56,8.77,12.51,18.93,12.51S592.68,97.71,592.68,91c0-6-4.39-9.27-15.43-11.75l-11.94-2.6C548.41,73,540.1,64.44,540.1,51c0-16.9,14.6-28.07,35-28.07,21.34,0,34.74,11,35.05,27.56h-18c-.63-7.75-7.43-12.45-17-12.45S559.4,42.59,559.4,49.39c0,5.65,4.45,8.82,15,11.24L585.5,63c18.35,3.93,26.35,11.81,26.35,25.78,0,17.78-14.41,29-37.14,29-22,0-36.08-10.48-36.65-27.69Z"/><path class="cls-f-1" d="M645.51,32.43V48.12h12.57v14H645.51V94.66c0,5.21,2.54,7.69,8,7.69A30.14,30.14,0,0,0,658,102v13.65a42.19,42.19,0,0,1-8.83.77c-16,0-22.23-5.34-22.23-18.61V62.09h-9.58v-14H627V32.43Z"/><path class="cls-f-1" d="M664.81,82.09c0-22,13.34-35.43,33.72-35.43S732.25,60,732.25,82.09c0,22.42-13.14,35.56-33.72,35.56S664.81,104.44,664.81,82.09Zm48.58.06c0-13.52-5.84-21.33-14.86-21.33s-14.92,7.81-14.92,21.33,5.78,21.34,14.92,21.34S713.39,95.81,713.39,82.15Z"/><path class="cls-f-1" d="M741.77,48.12h17.91V60.37h.38c2.42-8.63,8.19-13.33,16.2-13.33a18.59,18.59,0,0,1,5.27.7V64.06A19,19,0,0,0,774.79,63c-9.14,0-14.47,5.58-14.47,15.17v38H741.77Z"/><path class="cls-f-1" d="M784.89,96.63c0-12.38,9.53-19.56,26.48-20.57l17.15-1V70.53c0-6.35-4.45-10-11.43-10s-11.31,3.43-12.2,8.45H787.94c.7-13.21,11.94-22.29,30-22.29,17.47,0,28.83,9,28.83,22.73v46.8H828.83V105.78h-.38c-3.81,7.24-12.25,11.49-20.76,11.49C794.73,117.27,784.89,108.89,784.89,96.63Zm43.63-5.39v-5l-14.36.89c-6.92.51-10.85,3.62-10.85,8.45,0,5.08,4.19,8.25,10.47,8.25C821.85,103.87,828.52,98.6,828.52,91.24Z"/><path class="cls-f-1" d="M858.3,121h18.16c1.46,4.7,6.79,7.94,13.84,7.94,9.59,0,14.93-5.34,14.93-13.21V103.81h-.39c-3.17,7.24-11.17,12.19-21,12.19-16.64,0-27.63-12.83-27.63-34.1C856.2,60.31,866.87,47,884.14,47c9.78,0,17.47,5.14,21,13h.32V48.12h18.29v67.12c0,16.26-13.59,26.61-34,26.61C871.89,141.85,859.76,133.15,858.3,121Zm47-39c0-12.26-5.91-20.13-15.18-20.13S875.19,69.64,875.19,82s5.71,19.68,14.92,19.68S905.29,94.35,905.29,82Z"/><path class="cls-f-1" d="M997.94,95.36c-2,13.34-14.23,22.29-31.06,22.29-21,0-33.53-13.4-33.53-35.18s12.7-35.81,32.84-35.81c19.81,0,32.32,13.39,32.32,34.1v5.65H951.58v1.14c0,9.72,6.16,16.39,15.62,16.39,6.8,0,12-3.37,13.72-8.58ZM951.77,75h28.89c-.38-8.7-6-14.67-14.28-14.67S952.4,66.53,951.77,75Z"/><path d="M197.45,90.09c.89,7.56,8.76,12.51,18.92,12.51S233.58,97.71,233.58,91c0-6-4.38-9.27-15.43-11.75l-11.94-2.6C189.32,73,181,64.44,181,51,181,34.14,195.61,23,216.05,23c21.34,0,34.74,11,35.06,27.56h-18c-.64-7.75-7.43-12.45-17-12.45s-15.81,4.51-15.81,11.31c0,5.65,4.44,8.82,15,11.24L226.41,63c18.35,3.93,26.35,11.81,26.35,25.78,0,17.78-14.42,29-37.15,29-22,0-36.07-10.48-36.64-27.69Z"/><path d="M262.92,48.12h17.9V60.44h.39a20,20,0,0,1,19.43-13.59c9.84,0,16.7,5.08,19,14H320c3-8.58,11.17-14,21.14-14,13.34,0,22.29,9.14,22.29,22.86v46.48H344.9V74.34c0-7.87-3.94-12.19-11.11-12.19s-11.69,5.14-11.69,12.7v41.34H304.26V73.77c0-7.3-4.13-11.62-11-11.62-7,0-11.81,5.33-11.81,13v41.08H262.92Z"/><path d="M372.58,96.63c0-12.38,9.53-19.56,26.48-20.57l17.15-1V70.53c0-6.35-4.45-10-11.43-10s-11.31,3.43-12.2,8.45H375.63c.7-13.21,11.94-22.29,30-22.29,17.47,0,28.83,9,28.83,22.73v46.8h-17.9V105.78h-.39c-3.81,7.24-12.25,11.49-20.76,11.49C382.42,117.27,372.58,108.89,372.58,96.63Zm43.63-5.39v-5l-14.35.89c-6.93.51-10.86,3.62-10.86,8.45,0,5.08,4.19,8.25,10.48,8.25C409.54,103.87,416.21,98.6,416.21,91.24Z"/><path d="M446.37,48.12h17.91V60.37h.38C467.07,51.74,472.85,47,480.85,47a18.54,18.54,0,0,1,5.27.7V64.06A18.93,18.93,0,0,0,479.39,63c-9.14,0-14.48,5.58-14.48,15.17v38H446.37Z"/><path d="M517.17,32.43V48.12h12.58v14H517.17V94.66c0,5.21,2.54,7.69,8,7.69a29.94,29.94,0,0,0,4.51-.32v13.65a42.08,42.08,0,0,1-8.82.77c-16,0-22.23-5.34-22.23-18.61V62.09H489v-14h9.59V32.43Z"/><path d="M1009.62,116.19V24.56h39.88c17.21,0,28,8.82,28,22.86a20.2,20.2,0,0,1-17.21,19.87v.51c12.45,1,21.6,10,21.6,22.17,0,16.13-12.13,26.22-31.69,26.22Zm19.18-53.53h13.78c10.22,0,16.06-4.51,16.06-12.26,0-7.36-5.14-11.56-14.09-11.56H1028.8Zm16.51,39.24c11,0,17-4.7,17-13.46,0-8.57-6.16-13.14-17.47-13.14H1028.8v26.6Z"/><path d="M1088.74,82.09c0-22,13.34-35.43,33.72-35.43s33.72,13.33,33.72,35.43c0,22.42-13.14,35.56-33.72,35.56S1088.74,104.44,1088.74,82.09Zm48.58.06c0-13.52-5.84-21.33-14.86-21.33s-14.92,7.81-14.92,21.33,5.78,21.34,14.92,21.34S1137.32,95.81,1137.32,82.15Z"/><path d="M1191.74,92.57,1179,116.19h-19.49l21.34-33.91-21.21-34.16h20.89l12.25,23h.39l12.06-23h20.2l-21.28,33.65,21.09,34.42h-20.14l-13-23.62Z"/><path d="M1234.6,106.73A10.23,10.23,0,1,1,1244.82,117,10.13,10.13,0,0,1,1234.6,106.73Z"/><path d="M1310.68,73.45c-1.08-7.17-5.85-12.25-13.47-12.25-9.14,0-14.86,7.75-14.86,20.89,0,13.4,5.72,21,14.93,21,7.43,0,12.25-4.44,13.4-11.87H1328c-1,16.06-13,26.41-30.86,26.41-20.52,0-33.53-13.33-33.53-35.56,0-21.84,13-35.43,33.4-35.43,18.42,0,30.1,11.36,30.93,26.79Z"/><path d="M1334.42,82.09c0-22,13.34-35.43,33.72-35.43s33.72,13.33,33.72,35.43c0,22.42-13.14,35.56-33.72,35.56S1334.42,104.44,1334.42,82.09Zm48.58.06c0-13.52-5.84-21.33-14.86-21.33s-14.92,7.81-14.92,21.33,5.78,21.34,14.92,21.34S1383,95.81,1383,82.15Z"/><path d="M1411.39,48.12h17.9V60.44h.38a20,20,0,0,1,19.44-13.59c9.84,0,16.7,5.08,19,14h.39c3-8.58,11.17-14,21.14-14,13.34,0,22.29,9.14,22.29,22.86v46.48h-18.54V74.34c0-7.87-3.94-12.19-11.11-12.19s-11.69,5.14-11.69,12.7v41.34h-17.84V73.77c0-7.3-4.13-11.62-11-11.62-7,0-11.81,5.33-11.81,13v41.08h-18.54Z"/><polygon class="cls-f-2" points="89.37 116.19 81.87 116.19 81.87 76.28 42.09 76.28 42.09 68.78 89.37 68.78 89.37 116.19"/><polygon class="cls-f-2" points="104.98 116.19 97.48 116.19 97.48 60.67 42.09 60.67 42.09 53.17 104.98 53.17 104.98 116.19"/><polygon class="cls-f-2" points="120.59 116.19 113.09 116.19 113.09 45.07 42.09 45.07 42.09 37.56 120.59 37.56 120.59 116.19"/></svg>
+                    </div>
+                    <p class="footer-tagline">The AI inventory platform built for cleaning and organization companies.</p>
+                </div>
+                <div class="footer-col">
+                    <h5>Product</h5>
+                    <a href="#features">Features</a>
+                    <a href="#how">How it works</a>
+                    <a href="#">Pricing</a>
+                    <a href="#">Integrations</a>
+                </div>
+                <div class="footer-col">
+                    <h5>Company</h5>
+                    <a href="#">About</a>
+                    <a href="#">Partners</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Contact</a>
+                </div>
+                <div class="footer-col">
+                    <h5>Resources</h5>
+                    <a href="#">Blog</a>
+                    <a href="#">Case studies</a>
+                    <a href="#">Help center</a>
+                    <a href="#">Security</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div>&copy; 2026 SmartStorageBox. All rights reserved.</div>
+                <div style="display: flex; gap: 1.5rem;">
+                    <a href="#" style="color: var(--ink-500); text-decoration: none;">Privacy</a>
+                    <a href="#" style="color: var(--ink-500); text-decoration: none;">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Nav scroll
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 20);
+        });
+
+        // Scroll reveal
+        const reveals = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -80px 0px' });
+        reveals.forEach(el => observer.observe(el));
+
+        // FAQ
+        function toggleFaq(el) {
+            const item = el.parentElement;
+            const isActive = item.classList.contains('active');
+            document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+            if (!isActive) item.classList.add('active');
+        }
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', function(e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
